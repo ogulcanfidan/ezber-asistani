@@ -1,0 +1,511 @@
+{
+  "@@locale": "en",
+  "appTitle": "Memorize Assistant",
+  "library": "My pieces",
+  "emptyLibrary": "Nothing here yet. Add a play, a poem or a speech and start memorizing.",
+  "newPiece": "New",
+  "kindPlay": "Play / scene",
+  "kindPoem": "Poem / text",
+  "kindSpeech": "Speech / presentation",
+  "kindPlayHelp": "Write each line as NAME: line. Put stage directions in (parentheses). Screenplay format also works.",
+  "kindPoemHelp": "Each line becomes a step. Good for poems, songs, lists and any text to learn word for word.",
+  "kindSpeechHelp": "Each sentence or paragraph on its own line becomes a step. Track your time and speaking pace.",
+  "title": "Title",
+  "voiceLanguage": "Voice language",
+  "pasteHint": "Paste or type your text here",
+  "importFile": "Open file (.txt, .pdf, .docx)",
+  "importFailed": "This file could not be read. Please use a plain text (.txt) file.",
+  "continueAction": "Continue",
+  "reviewTitle": "Check the lines",
+  "reviewHelp": "Tap a name to give the line to another character. Tap the text to edit it. Use ⋮ for more.",
+  "whoAmI": "Which character are you?",
+  "whoAmIHelp": "Your lines will be the ones you practise.",
+  "characters": "Characters",
+  "direction": "Direction",
+  "heading": "Scene",
+  "editLine": "Edit text",
+  "deleteLine": "Delete",
+  "mergeWithPrevious": "Join with the line above",
+  "makeDirection": "Make it a stage direction",
+  "makeHeading": "Make it a scene heading",
+  "makeDialogue": "Make it a spoken line",
+  "addLineBelow": "Add a line below",
+  "assignTo": "Who says this?",
+  "newCharacter": "New character",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "rename": "Rename",
+  "mergeInto": "Merge into…",
+  "name": "Name",
+  "voice": "Voice",
+  "pitch": "Pitch",
+  "speed": "Speed",
+  "testVoice": "Test",
+  "defaultVoice": "Default voice",
+  "testSentence": "Hello! This is how I will sound.",
+  "noVoices": "No voice for this language was found on your device. You can install one in Android's text-to-speech settings.",
+  "rehearse": "Rehearse",
+  "mode": "Mode",
+  "modeListen": "Listen",
+  "modeListenHelp": "Everything is read aloud. Good for getting to know the piece.",
+  "modeWait": "Wait for me",
+  "modeWaitHelp": "Stops at your line. Say it, then tap Continue.",
+  "modeCheck": "Check me",
+  "modeCheckHelp": "Gives you time to say your line, then reads it so you can check yourself.",
+  "modeRun": "Run-through",
+  "modeRunHelp": "Gives you time for your line and carries on without reading it.",
+  "hint": "Show my line as",
+  "hintFull": "Full text",
+  "hintFirst": "First letters",
+  "hintHidden": "Hidden",
+  "readDirections": "Read stage directions aloud",
+  "pauseLength": "Time for my line",
+  "yourTurn": "Your turn",
+  "show": "Show",
+  "play": "Play",
+  "pause": "Pause",
+  "previousLine": "Previous line",
+  "nextLine": "Next line",
+  "jumpToScene": "Jump to scene",
+  "fromStart": "From the beginning",
+  "finished": "Rehearsal complete.",
+  "restart": "Start again",
+  "settings": "Settings",
+  "appLanguage": "App language",
+  "systemDefault": "System default",
+  "backup": "Back up all pieces",
+  "backupHelp": "Save a backup file so you never lose your pieces when you change phones.",
+  "restore": "Restore from backup",
+  "restoreDone": "{count, plural, =1{1 piece restored} other{{count} pieces restored}}",
+  "@restoreDone": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "restoreFailed": "This file is not a valid backup.",
+  "deleteConfirm": "Delete \"{title}\"? This cannot be undone.",
+  "@deleteConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "lineCount": "{count, plural, =1{1 line} other{{count} lines}}",
+  "@lineCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "privacy": "Privacy",
+  "privacyText": "Your texts stay on your phone and are never uploaded. Voices are produced on the device by your phone's text-to-speech engine. Text in photos is read on the device with Google ML Kit; photos are not sent anywhere, but ML Kit may send Google anonymous diagnostic data (such as device model and error codes). In hands-free mode the microphone is used only on the device, in real time, to notice when you have finished speaking. If you turn on “Check what I say”, your speech is turned into text by your phone's on-device speech recognition; the app never uses online recognition. Nothing is recorded or sent. In \"Recite from memory\" mode your speech is transcribed on the phone by the open-source Whisper model, downloaded once. The only exception is \"Record voices\": lines are recorded only when you tap \"Record\", and the recordings stay on the phone and are never sent.",
+  "privacyPolicyFull": "Full privacy policy",
+  "appVersion": "Version",
+  "noMyCharacter": "Choose at least one character as yours before rehearsing.",
+  "me": "Me",
+  "modeHandsFree": "Hands-free",
+  "modeHandsFreeHelp": "Listens when it's your turn. Say your line; when you stop talking it carries on. If you get stuck, it reads your line to you.",
+  "listening": "Listening… say your line",
+  "micDenied": "Microphone permission is needed for hands-free mode. Switched to “Wait for me”.",
+  "endSilence": "Pause that ends my line",
+  "voiceN": "Voice {n}",
+  "@voiceN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "linesHeader": "Lines",
+  "pdfScanned": "This PDF has no selectable text (it looks like a scanned page). Use “From photos” to read it from a picture, or paste the text.",
+  "hintWord": "Hint",
+  "checkAccuracy": "Check what I say",
+  "checkAccuracyHelp": "Your speech is turned into text by your phone's own on-device speech recognition and compared with your line. Nothing is recorded and your voice never leaves the phone.",
+  "sttUnavailable": "This phone has no on-device speech recognition, so accuracy can't be checked. Hands-free mode still works.",
+  "sttLanguageMissing": "On-device speech recognition isn't available for this language on your phone.",
+  "sttDownload": "Download speech recognition for this language",
+  "sttDownloading": "Downloading the language pack… This may take a few minutes.",
+  "readCorrection": "Read the correct line if I got it wrong",
+  "accuracyScore": "{score}% correct",
+  "missedWords": "Missed: {words}",
+  "notUnderstood": "Couldn't make that out",
+  "summaryAccuracy": "Average accuracy {score}%",
+  "summaryPrompts": "{count, plural, =0{No prompts needed} =1{Prompted once} other{Prompted {count} times}}",
+  "@accuracyScore": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "@missedWords": {
+    "placeholders": {
+      "words": {
+        "type": "String"
+      }
+    }
+  },
+  "@summaryAccuracy": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryPrompts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "finishedPerfect": "Well done! You got through without any help.",
+  "finishedGood": "Going well! Rehearsal complete.",
+  "finishedPractice": "Rehearsal complete. Practise the lines where you got stuck.",
+  "summaryLines": "{count, plural, =1{1 line} other{{count} lines}}",
+  "summaryPrompted": "{count, plural, =1{prompted on 1 line} other{prompted on {count} lines}}",
+  "summaryCorrected": "{count, plural, =1{1 line corrected} other{{count} lines corrected}}",
+  "summaryUnclear": "{count, plural, =1{1 line not understood} other{{count} lines not understood}}",
+  "@summaryLines": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryPrompted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryCorrected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryUnclear": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importPhoto": "From photos",
+  "takePhoto": "Take a photo",
+  "reading": "Reading…",
+  "docOld": "Old Word files (.doc) can't be read. Save the document as .docx or PDF and try again.",
+  "noTextInPhoto": "No readable text was found in the photo. Try a sharper, well-lit photo taken straight on.",
+  "photoAlphabet": "Reading text from photos doesn't support the Cyrillic or Arabic alphabet. Type or paste the text instead.",
+  "unsureBanner": "{count, plural, =1{It wasn't clear who says 1 line. Tap the highlighted line to fix it.} other{It wasn't clear who says {count} lines. Tap the highlighted lines to fix them.}}",
+  "splitHint": "Press Enter to split the line into two.",
+  "charactersAndVoices": "Characters and voices",
+  "hintProgressive": "Progressive",
+  "hintKeywords": "Key words",
+  "hideRatio": "Hidden words: {percent}%",
+  "levelUp": "Great! Next round {percent}% of the words will be hidden.",
+  "modeBuildUp": "Build up",
+  "modeBuildUpHelp": "First line 1, then lines 1–2, then 1–3… Each new line is read to you first, then you say everything from the start. Ideal for poems and short texts.",
+  "stepOf": "Step {step} of {total}",
+  "onlyWeak": "Only lines I struggled with",
+  "onlyWeakHelp": "Practise only the lines where you needed a prompt, a correction or had a low score.",
+  "weakCount": "{count, plural, =1{1 line you struggled with} other{{count} lines you struggled with}}",
+  "noWeak": "No difficult lines yet",
+  "elapsed": "Time {time}",
+  "targetTime": "Target time",
+  "targetNone": "No target",
+  "overTarget": "{time} over target",
+  "underTarget": "{time} under target",
+  "wpm": "{wpm} words/min",
+  "@unsureBanner": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@hideRatio": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@levelUp": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@stepOf": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@weakCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@elapsed": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@overTarget": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@underTarget": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@wpm": {
+    "placeholders": {
+      "wpm": {
+        "type": "int"
+      }
+    }
+  },
+  "proTitle": "Memorize Pro",
+  "proPitch": "Learn by heart faster with Pro.",
+  "proFeatureHandsFree": "Hands-free rehearsal: listens when it's your turn, no need to touch your phone",
+  "proFeatureUnlimited": "Unlimited texts (free version: {count})",
+  "@proFeatureUnlimited": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "proTrial": "{days} days free, then {price}/month",
+  "@proTrial": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "proPrice": "{price}/month",
+  "@proPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "proStartTrial": "Start free trial",
+  "proSubscribe": "Subscribe",
+  "proRestore": "Restore purchases",
+  "proTerms": "The subscription renews automatically every month. Cancel anytime in Google Play > Subscriptions; if you cancel, Pro stays active until the end of the period.",
+  "proUnavailable": "The subscription is not available right now. Please try again later.",
+  "proActive": "Pro is active",
+  "proManage": "Manage subscription",
+  "proUpgrade": "Go Pro",
+  "proLimitReached": "The free version can save up to {count} texts.",
+  "@proLimitReached": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "proThanks": "Thank you! Pro is active.",
+  "proHandsFreeLocked": "Hands-free rehearsal is a Pro feature. Switched to \"Wait for me\".",
+  "proNotFound": "No active subscription found.",
+  "modePages": "Page by page",
+  "modePagesHelp": "Says \"Page 1\", and when time is up \"Time is up. Page 2\". Talk without reading; tap \"Next page\" if you finish early.",
+  "pageCue": "Page {n}",
+  "@pageCue": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pageCueTitled": "Page {n}. {title}",
+  "@pageCueTitled": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "timeUp": "Time is up.",
+  "presentationDone": "End of presentation.",
+  "nextPage": "Next page",
+  "pageTimes": "Page times",
+  "pageTimesHelp": "Pages come from headings in the text, or from paragraphs if there are none.",
+  "pageTimesAuto": "Distribute automatically",
+  "pageSummary": "P{n} {used}/{planned}",
+  "@pageSummary": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "used": {
+        "type": "String"
+      },
+      "planned": {
+        "type": "String"
+      }
+    }
+  },
+  "pageOf": "Page {n}/{total}",
+  "@pageOf": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "emotion": "Tone",
+  "emotionHelp": "Speed, pitch and volume are adjusted for this feeling. Directions like (angrily) or (crying) in the text are detected automatically.",
+  "emoNeutral": "Normal",
+  "emoHappy": "Happy",
+  "emoSad": "Sad",
+  "emoAngry": "Angry",
+  "emoExcited": "Excited",
+  "emoCalm": "Calm",
+  "emoWhisper": "Whisper",
+  "emoAfraid": "Afraid",
+  "modeRecite": "Recite from memory (error check)",
+  "modeReciteHelp": "Say the text from memory; it stops where you skip or say something wrong and shows the mistake. You get a report at the end.",
+  "reciteTitle": "Recite from memory",
+  "reciteModelTitle": "Speech recognition model",
+  "reciteModelHelp": "For the error check, a speech recognition model that runs on your phone is downloaded once. It is free; your voice never leaves the phone. Wi-Fi recommended.",
+  "reciteModelStandard": "Standard ({mb} MB) — fast",
+  "@reciteModelStandard": {
+    "placeholders": {
+      "mb": {
+        "type": "int"
+      }
+    }
+  },
+  "reciteModelAccurate": "High accuracy ({mb} MB) — slower",
+  "@reciteModelAccurate": {
+    "placeholders": {
+      "mb": {
+        "type": "int"
+      }
+    }
+  },
+  "reciteDownload": "Download",
+  "reciteDownloading": "Downloading… {pct}%",
+  "@reciteDownloading": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "reciteDownloadFailed": "Download failed. Check your connection and try again.",
+  "reciteLoading": "Loading model…",
+  "reciteStart": "Start",
+  "reciteListening": "Listening… Say the text from the beginning.",
+  "reciteChecking": "Checking…",
+  "reciteHeard": "I heard: {text}",
+  "@reciteHeard": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "reciteSkipped": "You skipped a part",
+  "reciteWrong": "You said it wrong",
+  "reciteExpected": "Correct: {text}",
+  "@reciteExpected": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "reciteYouSaid": "You said: {text}",
+  "@reciteYouSaid": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "reciteContinueHere": "Continue from here",
+  "reciteFinish": "Finish",
+  "reciteAccuracy": "Accuracy: {n}%",
+  "@reciteAccuracy": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "reciteNoErrors": "No mistakes, great!",
+  "reciteMinor": "{n} small skips (short words)",
+  "@reciteMinor": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "reciteAgain": "Again",
+  "reciteNote": "Recognition is not perfect; it may stop you where it is unsure.",
+  "reciteLoadFailed": "The model could not be opened. Try deleting and downloading it again.",
+  "recordLines": "Record voices",
+  "recordLinesHelp": "Record the other characters' lines in your own voice or a friend's; they play instead of the synthetic voice during rehearsal, with real emotion. Recordings stay on the phone and are not included in backups.",
+  "recordStart": "Record",
+  "recordStop": "Stop",
+  "recordPlay": "Listen",
+  "recordDelete": "Delete recording",
+  "recordNext": "Next",
+  "recordPrev": "Previous",
+  "recordedCount": "{n}/{total} lines recorded",
+  "@recordedCount": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "recordIncludeMine": "Show my own lines too",
+  "recordNone": "No lines to record.",
+  "recordingNow": "Recording…",
+  "recordedBadge": "Recorded"
+}
