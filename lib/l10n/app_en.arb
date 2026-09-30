@@ -204,7 +204,7 @@
   "reading": "Reading…",
   "docOld": "Old Word files (.doc) can't be read. Save the document as .docx or PDF and try again.",
   "noTextInPhoto": "No readable text was found in the photo. Try a sharper, well-lit photo taken straight on.",
-  "photoAlphabet": "Reading text from photos doesn't support the Cyrillic or Arabic alphabet. Type or paste the text instead.",
+  "photoAlphabet": "Reading text from photos only works with the Latin alphabet. Type or paste the text instead.",
   "unsureBanner": "{count, plural, =1{It wasn't clear who says 1 line. Tap the highlighted line to fix it.} other{It wasn't clear who says {count} lines. Tap the highlighted lines to fix them.}}",
   "splitHint": "Press Enter to split the line into two.",
   "charactersAndVoices": "Characters and voices",

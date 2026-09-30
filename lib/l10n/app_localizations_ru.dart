@@ -477,7 +477,7 @@ class LRu extends L {
 
   @override
   String get photoAlphabet =>
-      'Чтение с фото не поддерживает кириллицу и арабский алфавит. Введите или вставьте текст.';
+      'Чтение с фото работает только с латиницей. Введите или вставьте текст.';
 
   @override
   String unsureBanner(int count) {

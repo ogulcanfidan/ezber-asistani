@@ -461,7 +461,7 @@ class LEn extends L {
 
   @override
   String get photoAlphabet =>
-      'Reading text from photos doesn\'t support the Cyrillic or Arabic alphabet. Type or paste the text instead.';
+      'Reading text from photos only works with the Latin alphabet. Type or paste the text instead.';
 
   @override
   String unsureBanner(int count) {

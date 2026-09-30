@@ -1,0 +1,34 @@
+== TITLE
+Ezber: Replik, Sunum, Şiir
+== SHORT
+Replik, şiir ve sunumları eller serbest, suflör desteğiyle kolayca ezberleyin.
+== NOTES
+Artık 14 dilde: Hintçe, Çince, Japonca ve Korece eklendi.
+== FULL
+Tiyatro repliği, 23 Nisan şiiri, okul gösterisi, konuşma ya da sunum… Ezber Asistanı metninizi size okur, sıra size gelince dinler ve takıldığınızda suflör gibi yardım eder.
+
+🎭 OYUN VE REPLİK
+• Metni yapıştırın veya TXT, PDF, Word dosyasından ya da fotoğraftan aktarın; karakterler ve replikler otomatik ayrılır
+• Hangi karakter olduğunuzu seçin; diğer karakterler farklı seslerle okunur
+• Repliğin tonunu seçin (öfkeli, üzgün, fısıltı…) ya da karşı replikleri kendi sesinizle kaydedin
+
+🎙️ ELLER SERBEST PROVA
+• Sıra size gelince uygulama dinler; repliğinizi söyleyip susunca devam eder
+• Takılırsanız suflör önce ilk kelimeleri fısıldar, gerekirse tamamını okur
+• Telefona dokunmadan, yürürken veya yolculukta çalışın
+
+📜 ŞİİR VE METİN
+• Üst üste ekleyerek ezber: 1. dize, sonra 1–2, sonra 1–3…
+• Kademeli silme: her hatasız turda daha fazla kelime gizlenir
+• Ezberden okuma: atladığınız ya da yanlış söylediğiniz yerde durur, sonunda rapor verir
+• Zorlandığınız satırları hatırlar, yalnızca onları çalıştırır
+
+🎤 SUNUM
+• Sayfa sayfa prova: her slayta süre, süre dolunca sesli uyarı
+• Süre sayacı, hedef süre ve konuşma hızı
+• Anahtar kelime ipuçlarıyla metne bağlı kalmadan akışı ezberleyin
+
+🔒 GİZLİLİK
+• Hesap yok, reklam yok
+• Her şey telefonunuzda çalışır: metinleriniz ve kayıtlarınız telefondan çıkmaz
+• 14 dil

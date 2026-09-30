@@ -486,7 +486,7 @@ class LAr extends L {
 
   @override
   String get photoAlphabet =>
-      'القراءة من الصور لا تدعم الأبجدية الكيريلية ولا العربية. اكتب النص أو الصقه.';
+      'القراءة من الصور تعمل مع الأبجدية اللاتينية فقط. اكتب النص أو الصقه.';
 
   @override
   String unsureBanner(int count) {

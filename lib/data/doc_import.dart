@@ -148,4 +148,4 @@ Future<String> extractImageText(List<String> paths) async {
 
 /// Fotoğraftan okuma bu dilin alfabesini destekliyor mu.
 bool imageOcrSupports(String language) =>
-    !const {'ru', 'ar'}.contains(language.split(RegExp('[-_]')).first.toLowerCase());
+    !const {'ru', 'ar', 'hi', 'zh', 'ja', 'ko'}.contains(language.split(RegExp('[-_]')).first.toLowerCase());

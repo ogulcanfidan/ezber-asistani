@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'words.dart';
+
 enum WordStatus { ok, missed }
 
 class CheckedWord {
@@ -34,7 +36,7 @@ class LineCheck {
   List<String> get missed => [for (final w in words) if (w.status == WordStatus.missed) w.text];
 }
 
-final _wordRe = RegExp(r"[\p{L}\p{M}\p{N}]+(?:['’][\p{L}\p{M}]+)*", unicode: true);
+final _wordRe = wordRe;
 
 /// Tanıyıcı birden çok olası metin döndürür: repliğe en uyanı seçilir.
 LineCheck checkBest(String expected, List<String> heardAlternatives) {
@@ -92,7 +94,9 @@ String _fold(String w) {
   final sb = StringBuffer();
   for (final r in lower.runes) {
     final ch = String.fromCharCode(r);
-    if (RegExp(r'\p{M}', unicode: true).hasMatch(ch)) continue; // birleşik işaret
+    // Birleşik işaret (aksan, Arapça hareke) atılır; Hint yazılarında bu
+    // işaretler ünlüdür, kalır.
+    if (!(r >= 0x0900 && r <= 0x0DFF) && RegExp(r'\p{M}', unicode: true).hasMatch(ch)) continue;
     sb.write(_plain[ch] ?? ch);
   }
   return sb.toString();

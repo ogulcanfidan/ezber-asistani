@@ -73,7 +73,7 @@ void main() {
     return state;
   }
 
-  testWidgets('10 dilin hepsinde kütüphane açılır, Arapça sağdan sola', (tester) async {
+  testWidgets('her dilde kütüphane açılır, Arapça sağdan sola', (tester) async {
     for (final code in supportedLanguages.keys) {
       final state = await appState(locale: Locale(code));
       await tester.pumpWidget(EzberApp(key: ValueKey(code), state: state));

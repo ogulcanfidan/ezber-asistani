@@ -141,7 +141,7 @@
   "reading": "Lendo…",
   "docOld": "Arquivos antigos do Word (.doc) não podem ser lidos. Salve o documento como .docx ou PDF e tente de novo.",
   "noTextInPhoto": "Nenhum texto legível foi encontrado na foto. Tente uma foto mais nítida, bem iluminada e tirada de frente.",
-  "photoAlphabet": "A leitura de fotos não suporta os alfabetos cirílico e árabe. Digite ou cole o texto.",
+  "photoAlphabet": "A leitura de fotos só funciona com o alfabeto latino. Digite ou cole o texto.",
   "unsureBanner": "{count, plural, =1{Não ficou claro quem diz 1 linha. Toque na linha marcada para corrigir.} other{Não ficou claro quem diz {count} linhas. Toque nas linhas marcadas para corrigir.}}",
   "splitHint": "Pressione Enter para dividir a linha em duas.",
   "charactersAndVoices": "Personagens e vozes",

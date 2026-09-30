@@ -141,7 +141,7 @@
   "reading": "Wird gelesen…",
   "docOld": "Alte Word-Dateien (.doc) können nicht gelesen werden. Speichere das Dokument als .docx oder PDF und versuche es erneut.",
   "noTextInPhoto": "Im Foto wurde kein lesbarer Text gefunden. Versuche ein schärferes, gut beleuchtetes Foto von vorne.",
-  "photoAlphabet": "Das Lesen aus Fotos unterstützt weder das kyrillische noch das arabische Alphabet. Tippe oder füge den Text ein.",
+  "photoAlphabet": "Das Lesen aus Fotos funktioniert nur mit lateinischer Schrift. Tippe oder füge den Text ein.",
   "unsureBanner": "{count, plural, =1{Bei 1 Zeile war unklar, wer sie spricht. Tippe auf die markierte Zeile, um sie zu korrigieren.} other{Bei {count} Zeilen war unklar, wer sie spricht. Tippe auf die markierten Zeilen, um sie zu korrigieren.}}",
   "splitHint": "Drücke die Eingabetaste, um die Zeile zu teilen.",
   "charactersAndVoices": "Rollen und Stimmen",

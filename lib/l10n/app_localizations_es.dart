@@ -461,7 +461,7 @@ class LEs extends L {
 
   @override
   String get photoAlphabet =>
-      'La lectura desde fotos no admite los alfabetos cirílico ni árabe. Escribe o pega el texto.';
+      'La lectura desde fotos solo funciona con el alfabeto latino. Escribe o pega el texto.';
 
   @override
   String unsureBanner(int count) {

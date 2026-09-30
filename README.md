@@ -18,7 +18,7 @@ Her şey telefonda çalışır; hesap yok, reklam yok.
 - Sunumda sayfa sayfa süre, hedef süre ve konuşma hızı
 - Her karaktere ayrı ses, replik tonu, istenirse kendi sesinle kayıt
 - Aylık abonelik (Pro); reklam yok
-- 10 dilde arayüz
+- 14 dilde arayüz
 
 Flutter ile yazılmış bir Android uygulaması.
 

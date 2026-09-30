@@ -141,7 +141,7 @@
   "reading": "Membaca…",
   "docOld": "File Word lama (.doc) tidak dapat dibaca. Simpan dokumen sebagai .docx atau PDF lalu coba lagi.",
   "noTextInPhoto": "Tidak ditemukan teks yang terbaca di foto. Coba foto yang lebih tajam, terang, dan diambil dari depan.",
-  "photoAlphabet": "Membaca dari foto tidak mendukung aksara Sirilik dan Arab. Ketik atau tempel teksnya.",
+  "photoAlphabet": "Membaca dari foto hanya berfungsi untuk aksara Latin. Ketik atau tempel teksnya.",
   "unsureBanner": "{count, plural, other{Tidak jelas siapa yang mengucapkan {count} baris. Ketuk baris yang ditandai untuk memperbaikinya.}}",
   "splitHint": "Tekan Enter untuk membagi baris menjadi dua.",
   "charactersAndVoices": "Tokoh dan suara",

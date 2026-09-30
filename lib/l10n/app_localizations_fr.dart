@@ -463,7 +463,7 @@ class LFr extends L {
 
   @override
   String get photoAlphabet =>
-      'La lecture depuis des photos ne prend pas en charge les alphabets cyrillique et arabe. Saisissez ou collez le texte.';
+      'La lecture depuis des photos ne fonctionne qu\'avec l\'alphabet latin. Saisissez ou collez le texte.';
 
   @override
   String unsureBanner(int count) {

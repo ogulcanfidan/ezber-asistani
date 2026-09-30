@@ -453,7 +453,7 @@ class LId extends L {
 
   @override
   String get photoAlphabet =>
-      'Membaca dari foto tidak mendukung aksara Sirilik dan Arab. Ketik atau tempel teksnya.';
+      'Membaca dari foto hanya berfungsi untuk aksara Latin. Ketik atau tempel teksnya.';
 
   @override
   String unsureBanner(int count) {

@@ -31,6 +31,10 @@ const supportedLanguages = <String, String>{
   'it': 'Italiano',
   'ar': 'العربية',
   'id': 'Bahasa Indonesia',
+  'hi': 'हिन्दी',
+  'zh': '简体中文',
+  'ja': '日本語',
+  'ko': '한국어',
 };
 
 /// Metinlerin seslendirme dilleri (BCP-47).
@@ -48,6 +52,10 @@ const voiceLanguages = <String, String>{
   'it-IT': 'Italiano',
   'ar-SA': 'العربية',
   'id-ID': 'Bahasa Indonesia',
+  'hi-IN': 'हिन्दी',
+  'zh-CN': '中文（普通话）',
+  'ja-JP': '日本語',
+  'ko-KR': '한국어',
 };
 
 String defaultVoiceLanguageFor(Locale locale) {

@@ -10,11 +10,15 @@ import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
 import 'app_localizations_fr.dart';
+import 'app_localizations_hi.dart';
 import 'app_localizations_id.dart';
 import 'app_localizations_it.dart';
+import 'app_localizations_ja.dart';
+import 'app_localizations_ko.dart';
 import 'app_localizations_pt.dart';
 import 'app_localizations_ru.dart';
 import 'app_localizations_tr.dart';
+import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
 
@@ -106,11 +110,15 @@ abstract class L {
     Locale('en'),
     Locale('es'),
     Locale('fr'),
+    Locale('hi'),
     Locale('id'),
     Locale('it'),
+    Locale('ja'),
+    Locale('ko'),
     Locale('pt'),
     Locale('ru'),
     Locale('tr'),
+    Locale('zh'),
   ];
 
   /// No description provided for @appTitle.
@@ -836,7 +844,7 @@ abstract class L {
   /// No description provided for @photoAlphabet.
   ///
   /// In en, this message translates to:
-  /// **'Reading text from photos doesn\'t support the Cyrillic or Arabic alphabet. Type or paste the text instead.'**
+  /// **'Reading text from photos only works with the Latin alphabet. Type or paste the text instead.'**
   String get photoAlphabet;
 
   /// No description provided for @unsureBanner.
@@ -1455,11 +1463,15 @@ class _LDelegate extends LocalizationsDelegate<L> {
     'en',
     'es',
     'fr',
+    'hi',
     'id',
     'it',
+    'ja',
+    'ko',
     'pt',
     'ru',
     'tr',
+    'zh',
   ].contains(locale.languageCode);
 
   @override
@@ -1479,16 +1491,24 @@ L lookupL(Locale locale) {
       return LEs();
     case 'fr':
       return LFr();
+    case 'hi':
+      return LHi();
     case 'id':
       return LId();
     case 'it':
       return LIt();
+    case 'ja':
+      return LJa();
+    case 'ko':
+      return LKo();
     case 'pt':
       return LPt();
     case 'ru':
       return LRu();
     case 'tr':
       return LTr();
+    case 'zh':
+      return LZh();
   }
 
   throw FlutterError(

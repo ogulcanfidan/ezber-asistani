@@ -458,7 +458,7 @@ class LTr extends L {
 
   @override
   String get photoAlphabet =>
-      'Fotoğraftan okuma Kiril ve Arap alfabelerini desteklemiyor. Metni yazın veya yapıştırın.';
+      'Fotoğraftan okuma yalnızca Latin alfabesiyle çalışır. Metni yazın veya yapıştırın.';
 
   @override
   String unsureBanner(int count) {

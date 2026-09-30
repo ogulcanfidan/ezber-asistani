@@ -141,7 +141,7 @@
   "reading": "Okunuyor…",
   "docOld": "Eski Word (.doc) dosyaları okunamıyor. Belgeyi .docx veya PDF olarak kaydedip tekrar deneyin.",
   "noTextInPhoto": "Fotoğrafta okunabilir metin bulunamadı. Daha net, iyi ışıklı ve karşıdan çekilmiş bir fotoğraf deneyin.",
-  "photoAlphabet": "Fotoğraftan okuma Kiril ve Arap alfabelerini desteklemiyor. Metni yazın veya yapıştırın.",
+  "photoAlphabet": "Fotoğraftan okuma yalnızca Latin alfabesiyle çalışır. Metni yazın veya yapıştırın.",
   "unsureBanner": "{count, plural, other{{count} satırın kime ait olduğu anlaşılamadı. İşaretli satırlara dokunup düzeltin.}}",
   "splitHint": "Satırı ikiye bölmek için Enter'a basın.",
   "charactersAndVoices": "Karakterler ve sesler",

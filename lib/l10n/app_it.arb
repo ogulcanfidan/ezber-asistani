@@ -141,7 +141,7 @@
   "reading": "Lettura…",
   "docOld": "I vecchi file Word (.doc) non possono essere letti. Salva il documento come .docx o PDF e riprova.",
   "noTextInPhoto": "Nella foto non è stato trovato testo leggibile. Prova una foto più nitida, ben illuminata e scattata di fronte.",
-  "photoAlphabet": "La lettura da foto non supporta gli alfabeti cirillico e arabo. Scrivi o incolla il testo.",
+  "photoAlphabet": "La lettura da foto funziona solo con l'alfabeto latino. Scrivi o incolla il testo.",
   "unsureBanner": "{count, plural, =1{Non è chiaro chi dice 1 riga. Tocca la riga evidenziata per correggerla.} other{Non è chiaro chi dice {count} righe. Tocca le righe evidenziate per correggerle.}}",
   "splitHint": "Premi Invio per dividere la riga in due.",
   "charactersAndVoices": "Personaggi e voci",

@@ -463,7 +463,7 @@ class LIt extends L {
 
   @override
   String get photoAlphabet =>
-      'La lettura da foto non supporta gli alfabeti cirillico e arabo. Scrivi o incolla il testo.';
+      'La lettura da foto funziona solo con l\'alfabeto latino. Scrivi o incolla il testo.';
 
   @override
   String unsureBanner(int count) {

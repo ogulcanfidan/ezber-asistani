@@ -460,7 +460,7 @@ class LPt extends L {
 
   @override
   String get photoAlphabet =>
-      'A leitura de fotos não suporta os alfabetos cirílico e árabe. Digite ou cole o texto.';
+      'A leitura de fotos só funciona com o alfabeto latino. Digite ou cole o texto.';
 
   @override
   String unsureBanner(int count) {

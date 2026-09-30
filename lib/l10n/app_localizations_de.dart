@@ -462,7 +462,7 @@ class LDe extends L {
 
   @override
   String get photoAlphabet =>
-      'Das Lesen aus Fotos unterstützt weder das kyrillische noch das arabische Alphabet. Tippe oder füge den Text ein.';
+      'Das Lesen aus Fotos funktioniert nur mit lateinischer Schrift. Tippe oder füge den Text ein.';
 
   @override
   String unsureBanner(int count) {

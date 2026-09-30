@@ -14,7 +14,7 @@ import '../data/pro.dart' show proUnlocked;
 import 'pro_screen.dart';
 
 /// Play Console'a verilen adresle aynı olmalı.
-final privacyPolicyUrl = Uri.parse('https://fmjapps.github.io/privacy/ezber/');
+final privacyPolicyUrl = Uri.parse('https://fmjapps.com/privacy/ezber/');
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});

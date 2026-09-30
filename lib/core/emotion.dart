@@ -39,7 +39,9 @@ Emotion emotionFromDirection(String direction) {
   final words = t.split(RegExp(r'[^\p{L}]+', unicode: true));
   for (final e in _keywords.entries) {
     for (final k in e.value) {
-      final hit = k.contains(' ')
+      // Boşlukla yazılmayan (Çince, Japonca) ve birleşik işaretli (Hintçe,
+      // Korece ekleri) yazılarda kelime başı aranamaz: metinde geçmesi yeter.
+      final hit = k.contains(' ') || k.runes.first >= 0x0900
           ? t.contains(k)
           : _exact.contains(k)
               ? words.contains(k)
@@ -56,19 +58,26 @@ const _exact = {'sad', 'sob', 'joy'};
 const _keywords = <Emotion, List<String>>{
   // Fısıltı önce: "öfkeyle fısıldar" fısıltıdır.
   Emotion.whisper: ['fısılda', 'fisilda', 'alçak sesle', 'whisper', 'flüster', 'murmur', 'chuchot', 'susurr', 'sussurr',
-    'шёпот', 'шепот', 'шепч', 'berbisik', 'همس'],
+    'шёпот', 'шепот', 'шепч', 'berbisik', 'همس', 'फुसफुसा', '低声', '小声', '悄悄', '耳语', '低聲', '小聲', 'ささや', '囁', '속삭'],
   Emotion.angry: ['öfke', 'kızgın', 'sinir', 'bağır', 'hiddet', 'angr', 'furious', 'shout', 'yell', 'wütend',
     'zornig', 'schrei', 'colère', 'furieux', 'furieuse', 'crie', 'enfadad', 'furios', 'grita', 'raiva', 'bravo',
-    'arrabbiat', 'urla', 'сердит', 'злобн', 'крич', 'marah', 'berteriak', 'غاضب', 'يصرخ'],
+    'arrabbiat', 'urla', 'сердит', 'злобн', 'крич', 'marah', 'berteriak', 'غاضب', 'يصرخ', 'गुस्स', 'क्रोध', 'चिल्ला',
+    '生气', '生氣', '愤怒', '憤怒', '大喊', '大叫', '怒', '叫ん', '叫び', '화내', '화가', '화난', '분노', '소리치'],
   Emotion.sad: ['üzgün', 'üzül', 'ağla', 'hüzün', 'kederl', 'sad', 'sadly', 'crying', 'tearful', 'weep', 'sob', 'traurig',
-    'weinend', 'triste', 'pleur', 'llorando', 'chorando', 'piangend', 'грустн', 'плач', 'sedih', 'menangis', 'حزين', 'يبكي'],
+    'weinend', 'triste', 'pleur', 'llorando', 'chorando', 'piangend', 'грустн', 'плач', 'sedih', 'menangis', 'حزين', 'يبكي',
+    'उदास', 'दुखी', 'रोते', 'रोकर', '伤心', '傷心', '悲伤', '悲傷', '难过', '難過', '哭', '悲し', '泣', '슬프', '슬픈', '슬퍼', '울면서',
+    '울먹', '흐느'],
   Emotion.excited: ['heyecan', 'coşku', 'excited', 'eager', 'aufgeregt', 'begeistert', 'excité', 'emocionad',
-    'entusiasm', 'eccitat', 'взволнован', 'восторж', 'bersemangat', 'متحمس'],
+    'entusiasm', 'eccitat', 'взволнован', 'восторж', 'bersemangat', 'متحمس', 'उत्साह', 'उत्तेजित', '兴奋', '興奮', '激动',
+    '激動', 'わくわく', '흥분', '신나', '들뜬', '들떠'],
   Emotion.happy: ['sevinç', 'neşe', 'mutlu', 'gülerek', 'gülümse', 'happ', 'joy', 'laugh', 'smil', 'fröhlich',
     'lachend', 'glücklich', 'joyeu', 'riant', 'alegre', 'feliz', 'riendo', 'rindo', 'felice', 'ridendo', 'радостн',
-    'смеясь', 'весел', 'gembira', 'tertawa', 'senang', 'سعيد', 'يضحك'],
+    'смеясь', 'весел', 'gembira', 'tertawa', 'senang', 'سعيد', 'يضحك', 'खुश', 'हँस', 'हंस', 'मुस्कुरा', '高兴', '高興', '开心',
+    '開心', '笑', '嬉し', 'うれし', '楽し', '기쁘', '기쁜', '웃으며', '웃으면서', '행복', '미소'],
   Emotion.afraid: ['kork', 'ürker', 'titre', 'afraid', 'scared', 'fear', 'terrified', 'ängstlich', 'angst', 'effray',
-    'peur', 'asustad', 'miedo', 'assustad', 'spaventat', 'испуган', 'страх', 'takut', 'خائف'],
+    'peur', 'asustad', 'miedo', 'assustad', 'spaventat', 'испуган', 'страх', 'takut', 'خائف', 'डर', 'भयभीत', 'घबरा',
+    '害怕', '恐惧', '恐懼', '惊恐', '驚恐', '怖', '怯え', 'おびえ', '무서', '두려', '겁에', '겁먹'],
   Emotion.calm: ['sakin', 'yavaşça', 'yumuşak', 'calm', 'gently', 'softly', 'quietly', 'ruhig', 'sanft', 'calme',
-    'doucement', 'tranquil', 'suavemente', 'спокойн', 'тихо', 'tenang', 'pelan', 'بهدوء'],
+    'doucement', 'tranquil', 'suavemente', 'спокойн', 'тихо', 'tenang', 'pelan', 'بهدوء', 'शांत', 'धीरे', '平静', '平靜',
+    '冷静', '冷靜', '轻声', '輕聲', '温柔', '溫柔', '静か', '穏やか', '落ち着', '優しく', '차분', '조용', '침착', '부드럽'],
 };

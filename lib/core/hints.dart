@@ -1,3 +1,5 @@
+import 'words.dart';
+
 /// Kullanıcının kendi repliği prova sırasında nasıl gösterilir.
 enum HintLevel {
   /// Tam metin.
@@ -17,7 +19,7 @@ enum HintLevel {
   hidden,
 }
 
-final _word = RegExp(r"[\p{L}\p{M}\p{N}]+(?:['’][\p{L}\p{M}]+)*", unicode: true);
+final _word = wordRe;
 
 /// [revealWords]: suflörün ya da "İpucu" düğmesinin açtığı ilk kelimeler
 /// tam gösterilir, kalanı ipucu seviyesine göre.
@@ -41,16 +43,22 @@ String applyHint(
   }
 
   var index = 0;
+  var prevEnd = -1;
   final out = text.replaceAllMapped(_word, (m) {
     final word = m[0]!;
     final i = index++;
+    // Çince/Japoncada bitişik karakterler tek bir öbek gibi davranır:
+    // öbeğin yalnızca ilk karakteri ipucu olarak kalır.
+    final inRun = isCjk(word) && m.start == prevEnd;
+    prevEnd = isCjk(word) ? m.end : -1;
     if (i < revealWords) return word;
     switch (level) {
       case HintLevel.firstLetters:
-        return _initial(word);
+        return inRun ? '_' : _initial(word);
       case HintLevel.progressive:
         return wordHidden(seed, i, hideRatio) ? '_' * _letters(word) : word;
       case HintLevel.keywords:
+        if (isCjk(word)) return inRun ? '\u0000' : word;
         return isKeyword(word) ? word : '\u0000';
       case HintLevel.full:
       case HintLevel.hidden:
@@ -90,14 +98,23 @@ bool wordHidden(String seed, int index, double ratio) {
 /// (özel ad). Kısa bağlaç/edatlar ("ve", "bir", "the", "und") gizlenir.
 bool isKeyword(String word) {
   if (RegExp(r'\d').hasMatch(word)) return true;
-  return _letters(word) >= 5;
+  return _letters(word) >= _keywordLength(word);
+}
+
+/// Hece yazılarında kelimeler daha az harfle yazılır: Korecede 3 hece,
+/// Hintçede 4 harf anlamlı bir kelimedir.
+int _keywordLength(String word) {
+  final first = word.runes.first;
+  if (first >= 0xAC00 && first <= 0xD7A3) return 3;
+  if (first >= 0x0900 && first <= 0x097F) return 4;
+  return 5;
 }
 
 /// Kullanıcıya repliğini söylemesi için tanınan süre.
 Duration gapFor(String text, {double factor = 1.0}) {
-  final words = _word.allMatches(text).length;
+  final words = spokenWordCount(text);
   final ms = (1500 + words * 450) * factor;
   return Duration(milliseconds: ms.round());
 }
 
-int wordCount(String text) => _word.allMatches(text).length;
+int wordCount(String text) => spokenWordCount(text);

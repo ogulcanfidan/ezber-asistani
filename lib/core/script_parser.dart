@@ -11,7 +11,7 @@ class ScriptParser {
   const ScriptParser();
 
   static final _pageNumber = RegExp(
-    r'^\s*((page|sayfa|seite|página|pagina|page|страница|halaman|صفحة)\s*)?\d{1,4}\s*(/\s*\d{1,4})?\.?\s*$',
+    r'^\s*((page|sayfa|seite|página|pagina|page|страница|halaman|صفحة|पृष्ठ|पेज|第|ページ|페이지)\s*)?\d{1,4}\s*(/\s*\d{1,4})?\s*(页|頁|ページ|페이지|쪽)?\.?\s*$',
     caseSensitive: false,
     unicode: true,
   );
@@ -19,15 +19,22 @@ class ScriptParser {
   // "Birinci Perde", "Scene 2", "Akt III" — anahtar kelime satırın herhangi
   // bir yerinde. \b ASCII dışı harflerde çalışmadığı için lookaround.
   static final _heading = RegExp(
-    r'(?<!\p{L})(act|scene|perde|sahne|bölüm|akt|szene|acte|scène|acto|escena|ato|cena|atto|действие|сцена|явление|babak|adegan|الفصل|المشهد)(?!\p{L})',
+    r'(?<!\p{L})(act|scene|perde|sahne|bölüm|akt|szene|acte|scène|acto|escena|ato|cena|atto|действие|сцена|явление|babak|adegan|الفصل|المشهد|अंक|दृश्य|シーン|장면)(?!\p{L})',
     caseSensitive: false,
+    unicode: true,
+  );
+
+  // Çince, Japonca ve Korecede sayı ortada ya da başta: "第一幕", "第2场",
+  // "제1막", "2장".
+  static final _cjkHeading = RegExp(
+    r'^\s*(第\s*[0-9０-９一二三四五六七八九十百]+\s*[幕场場景]|제?\s*[0-9]+\s*[막장](?!\p{L}))',
     unicode: true,
   );
 
   /// Sunumda sayfa/slayt işareti: "Sayfa 2", "Slayt 3: Sonuç", "Slide 4".
   /// Oyunlarda sayfa numarası silinir; sunumda sayfa başıdır.
   static final _speechPage = RegExp(
-    r'^\s*(sayfa|slayt|page|slide|seite|folie|página|pagina|diapositiva|diapo|страница|слайд|halaman|salindia|صفحة|شريحة)\s*\d{1,3}(?!\d)',
+    r'^\s*((sayfa|slayt|page|slide|seite|folie|página|pagina|diapositiva|diapo|страница|слайд|halaman|salindia|صفحة|شريحة|पृष्ठ|पेज|स्लाइड|幻灯片|投影片|スライド|ページ|슬라이드|페이지)\s*\d{1,3}(?!\d)|第?\s*\d{1,3}\s*(页|頁|张|張|ページ|枚目|페이지|쪽)目?\s*([:：.。\-–—]|$))',
     caseSensitive: false,
     unicode: true,
   );
@@ -36,11 +43,11 @@ class ScriptParser {
 
   // AD: replik  |  AD - replik  |  AD. replik (AD kısa ve ilk harfi büyük)
   static final _inlineSpeaker = RegExp(
-    r'^\s*([^\s:().\[\]\-–—][^:()\[\]]{0,30}?)\s*(\([^)]*\))?\s*[:：]\s*(.+)$',
+    r'^\s*([^\s:：().\[\]（）【】\-–—][^:：()\[\]（）【】]{0,30}?)\s*([(（][^)）]*[)）])?\s*[:：]\s*(.+)$',
     unicode: true,
   );
 
-  static final _direction = RegExp(r'^\s*[(\[][^)\]]*[)\]]\s*$', unicode: true);
+  static final _direction = RegExp(r'^\s*[(\[（【][^)\]）】]*[)\]）】]\s*$', unicode: true);
 
   Piece parse({
     required String text,
@@ -111,7 +118,7 @@ class ScriptParser {
     final out = <String>[];
     for (var i = 0; i < lines.length; i++) {
       final t = lines[i].trim();
-      final opens = t.startsWith('(') ? ')' : t.startsWith('[') ? ']' : null;
+      final opens = const {'(': ')', '[': ']', '（': '）', '【': '】'}[t.isEmpty ? '' : t[0]];
       if (opens == null || t.contains(opens)) {
         out.add(lines[i]);
         continue;
@@ -287,7 +294,7 @@ class ScriptParser {
       if (m == null) continue;
       final name = m.group(1)!.trim();
       if (name.isEmpty || name.length > 30 || name.split(RegExp(r'\s+')).length > 3) continue;
-      if (RegExp(r'[0-9!?.,;"«»]').hasMatch(name)) continue;
+      if (RegExp(r'[0-9!?.,;"«»。、，！？「」]').hasMatch(name)) continue;
       final key = _speakerKey(name);
       counts[key] = (counts[key] ?? 0) + 1;
     }
@@ -306,7 +313,7 @@ class ScriptParser {
 
   /// Senaryo biçimindeki tek başına ad satırı: tamamı büyük harf, kısa.
   bool _isCueName(String t) {
-    final name = t.replaceAll(RegExp(r'\s*\(.*\)\s*$'), '').trim();
+    final name = t.replaceAll(RegExp(r'\s*[(（].*[)）]\s*$'), '').trim();
     if (name.isEmpty || name.length > 30) return false;
     if (!RegExp(r'\p{L}', unicode: true).hasMatch(name)) return false;
     if (name.split(RegExp(r'\s+')).length > 3) return false;
@@ -317,7 +324,7 @@ class ScriptParser {
     final name = candidate.trim();
     if (name.isEmpty || name.length > 30) return false;
     if (name.split(RegExp(r'\s+')).length > 3) return false;
-    if (RegExp(r'[0-9!?.,;"«»]').hasMatch(name)) return false;
+    if (RegExp(r'[0-9!?.,;"«»。、，！？「」]').hasMatch(name)) return false;
     final first = name.characters0;
     // Büyük harfle başlamalı. Harf ayrımı olmayan alfabelerde (Arapça)
     // upper(x) == x olduğundan her kısa ad kabul edilir.
@@ -333,7 +340,9 @@ class ScriptParser {
   /// Sahne başlığı: anahtar kelime + numara, roma rakamı veya sıra sayısı.
   /// "SAHNE AMİRİ" gibi karakter adları başlık sayılmaz.
   bool _isHeading(String t) {
-    if (t.length > 60 || !_heading.hasMatch(_fold(t))) return false;
+    if (t.length > 60) return false;
+    if (_cjkHeading.hasMatch(t)) return true;
+    if (!_heading.hasMatch(_fold(t))) return false;
     // "SAHNE 1: Ev" başlıktır; "SAHNE AMİRİ: Işıklar hazır." bir repliktir.
     final inline = _inlineSpeaker.firstMatch(t);
     if (inline != null && _looksLikeName(inline.group(1)!) && !_hasNumbering(inline.group(1)!)) {
@@ -351,17 +360,17 @@ class ScriptParser {
 
   /// "Juliet" ve "JULIET" (veya Türkçe "Alİ"/"ALI") aynı karakterdir.
   String _speakerKey(String name) => name
-      .replaceAll(RegExp(r'\s*\(.*\)\s*$'), '')
+      .replaceAll(RegExp(r'\s*[(（].*[)）]\s*$'), '')
       .trim()
       .toUpperCase()
       .replaceAll('İ', 'I')
       .replaceAll(RegExp(r'\s+'), ' ');
 
   String _displayName(String name) =>
-      name.replaceAll(RegExp(r'\s*\(.*\)\s*$'), '').trim().replaceAll(RegExp(r'\s+'), ' ');
+      name.replaceAll(RegExp(r'\s*[(（].*[)）]\s*$'), '').trim().replaceAll(RegExp(r'\s+'), ' ');
 
   String _stripBrackets(String t) =>
-      t.trim().replaceAll(RegExp(r'^[(\[]\s*|\s*[)\]]$'), '');
+      t.trim().replaceAll(RegExp(r'^[(\[（【]\s*|\s*[)\]）】]$'), '');
 
   // Türkçe i/İ, ı/I dönüşümleri dahil.
   static String _upper(String s) =>

@@ -1,6 +1,7 @@
 import 'hints.dart' show isKeyword;
 import 'line_check.dart';
 import 'models.dart';
+import 'words.dart';
 
 /// Ezberden okuma kontrolü (şiir/metin/sunum): kullanıcı metni baştan sona
 /// söyler, telefonda çalışan tanıyıcı (Whisper) parça parça yazıya çevirir,
@@ -78,7 +79,7 @@ class ReciteChecker {
   /// Tanıyıcıya bağlam: son doğrulanan kelimeler (yalnızca geçmiş; önümüzdeki
   /// metni vermek tanıyıcıyı "doğru duymaya" zorlar, hatayı gizler).
   String contextPrompt({int count = 24}) =>
-      words.sublist((pos - count).clamp(0, pos), pos).map((w) => w.text).join(' ');
+      joinWords(words.sublist((pos - count).clamp(0, pos), pos).map((w) => w.text));
 
   /// Hata sonrası "Devam": hatalı yerden (atlanan kısmın başından) sürdürülür.
   void resumeAt(int index) => pos = index.clamp(0, words.length);
@@ -101,7 +102,7 @@ class ReciteChecker {
         kind: ReciteErrorKind.wrong,
         from: start,
         to: (start + 1).clamp(0, words.length),
-        heard: heard.join(' '),
+        heard: joinWords(heard),
       );
       errors.add(e);
       return ReciteStep(advancedTo: pos, stop: e);
@@ -123,7 +124,7 @@ class ReciteChecker {
           kind: kind,
           from: start + eFrom,
           to: start + eTo,
-          heard: heardGap.join(' '),
+          heard: joinWords(heardGap),
           minor: minor,
         );
         errors.add(err);
@@ -179,5 +180,5 @@ class ReciteChecker {
     return total == 0 ? 100 : (100 * matched / total).round();
   }
 
-  String textOf(ReciteError e) => words.sublist(e.from, e.to).map((w) => w.text).join(' ');
+  String textOf(ReciteError e) => joinWords(words.sublist(e.from, e.to).map((w) => w.text));
 }
